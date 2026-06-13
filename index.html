@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar bg-primary">
+    <nav class="navbar bg-primary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" >Minimarket</a>
             <p class="">Total de items en el carrito <span id="badge" class="badge text-bg-success">0</span></p>
@@ -19,7 +19,7 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
             <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="img/fresas.jpg" class="card-img-top img-center" alt="Imagen de bandeja de fresas">
                     <div class="card-body">
                         <h5 class="card-title">Fresas</h5>
                         <p class="card-text">Precio: $15000</p>
@@ -29,7 +29,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="img/sandia.jpg" class="card-img-top img-center" alt="Imagen de sandia">
                     <div class="card-body">
                         <h5 class="card-title">Sandia</h5>
                         <p class="card-text">Precio: $10000</p>
@@ -39,7 +39,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="img/platano.jpg" class="card-img-top img-center" alt="Imagen de platano">
                     <div class="card-body">
                         <h5 class="card-title">Platano</h5>
                         <p class="card-text">Precio: $3000</p>
@@ -49,7 +49,7 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="img/aguacate.jpg" class="card-img-top img-center" alt="Imagen de aguacate">
                     <div class="card-body">
                         <h5 class="card-title">Aguacate</h5>
                         <p class="card-text">Precio: $4000</p>
@@ -68,7 +68,7 @@
                     </div>                    
                     <div class="card-body">
                         <ul id="lista-carrito" class="list-group list-group-flush mb-3">
-                            <!-- <li class="list-group-item text-center text-muted py-3">El carrito está vacío</li> -->
+                            <li id="mensaje" class="list-group-item text-center text-muted py-3">El carrito está vacío</li>
                         </ul>                        
                         <div class="d-flex justify-content-between align-items-center border-top pt-3">
                             <h5>Total: <span class="text-success">$<span id="total">0.00</span></span></h5>
