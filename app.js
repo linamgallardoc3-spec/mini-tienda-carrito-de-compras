@@ -11,19 +11,23 @@ botonesAgregar.forEach(botonAgrerar => {
 });
 
 function agregarAlCarrito(nombre,precio) {
-    totalVenta = totalVenta + parseInt(precio);
+    let precioIn = parseInt(precio);
+    totalVenta = totalVenta + precioIn;
     const listaCarrito = document.getElementById('lista-carrito');
     let lista = document.createElement('li');
     lista.className = 'list-group-item d-flex justify-content-between align-items-center';
         lista.innerHTML = `
-            <strong>${nombre}</strong><small class="text-muted">$${precio}</small><button class="btn-eliminar btn btn-danger"><i class="bi bi-x-square"></i></button>
+            <strong>${nombre}</strong><small class="text-muted">$${precioIn}</small><button class="btn-eliminar btn btn-danger"><i class="bi bi-x-square"></i></button>
         `;
         listaCarrito.appendChild(lista);
+    const btnEliminar = lista.querySelector('.btn-eliminar');
+    btnEliminar.addEventListener('click', function(){
+        eliminarItem( lista,precioIn)
+    });
     cantidadItems++;
     updateBadge();
     updateTotal();
-    let btnEliminar = lista.querySelector('.btn-eliminar');
-    btnEliminar.addEventListener('click', eliminarItem(lista, precio));
+
 }
 
 function updateBadge() {
@@ -33,9 +37,15 @@ function updateBadge() {
 
 function updateTotal() {
     const idTotal = document.getElementById('total');
-    idTotal.textContent = totalVenta;
+    idTotal.textContent = totalVenta.toLocaleString('es-CR', { minimumFractionDigits: 2});
 }
 
 function eliminarItem(lista,precio) {
-    
+    lista.remove();
+    totalVenta = totalVenta - precio;
+    cantidadItems --;
+    console.log(totalVenta);
+    console.log(cantidadItems);
+    updateBadge();
+    updateTotal();
 }
